@@ -1,53 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Craig James | Developer</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-  <header>
-    <h1>Craig James</h1>
-    <p>Software Developer | Python, JavaScript, COBOL, SQL</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craig James | Developer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#me">Me</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I’m a developer with experience in COBOL, AS400, Python, JavaScript, SQL and Angular. 
-        I enjoy building clean, efficient systems and learning new tech.
-    </p>
-  </section>
+    <header id="me">
+      <h1>Craig James</h1>
+      <p>Software Developer | Python, JavaScript, COBOL, SQL</p>
+    </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Budget Tracker</strong> – A full-stack app for tracking job applications. [<a href="#">GitHub</a>]
-      </li>
-      <li>
-        <strong>Terminal To-Do App</strong> – Python CLI-based task manager. [<a href="#">GitHub</a>]
-      </li>
-      <li>
-        <strong>API Crypto</strong> - Rest API crypto lisitng. [<a href="#">GitHub</a>]
-      </li>
-    </ul>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a developer with experience in COBOL, AS400, Python, JavaScript, SQL
+        and Angular. I enjoy building clean, efficient systems and learning new
+        tech.
+      </p>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Python, JavaScript, Angular, COBOL, AS400, Git, CLI Tools</p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>Budget Tracker</strong> – A full-stack app for tracking job
+          applications. [<a href="#">GitHub</a>]
+        </li>
+        <li>
+          <strong>Terminal To-Do App</strong> – Python CLI-based task manager.
+          [<a href="#">GitHub</a>]
+        </li>
+        <li>
+          <strong>API Crypto</strong> - Rest API crypto lisitng. [<a href="#"
+            >GitHub</a
+          >]
+        </li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: cjames351@gmail.com</p>
-    <p>LinkedIn: <a href="#">Craig James</a></p>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>Python, JavaScript, Angular, COBOL, AS400, Git, CLI Tools</p>
+    </section>
 
-  <footer>
-    <p>© 2025 Craig James</p>
-  </footer>
-</body>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: cjames351@gmail.com</p>
+      <p>LinkedIn: <a href="#">Craig James</a></p>
+    </section>
+    <footer>
+      <p>© 2025 Craig James</p>
+    </footer>
+
+    <script>
+      const sections = document.querySelectorAll("section, header, footer");
+      const navLinks = document.querySelectorAll("nav a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.clientHeight;
+          if (
+            pageYOffset >= sectionTop &&
+            pageYOffset < sectionTop + sectionHeight
+          ) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
