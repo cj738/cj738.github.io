@@ -23,7 +23,7 @@
     </header>
 
     <section id="about">
-      <h2>About Me</h2>
+      <h1>About Me</h1>
       <p>
         I’m a developer with experience in COBOL, AS400, Python, JavaScript, SQL
         and Angular. I enjoy building clean, efficient systems and learning new
@@ -32,7 +32,7 @@
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h1>Projects</h1>
       <ul>
         <li>
           <strong>Budget Tracker</strong> – A full-stack app for tracking job
@@ -51,44 +51,17 @@
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
+      <h1>Skills</h1>
       <p>Python, JavaScript, Angular, COBOL, AS400, Git, CLI Tools</p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h1>Contact</h1>
       <p>Email: cjames351@gmail.com</p>
       <p>LinkedIn: <a href="#">Craig James</a></p>
     </section>
     <footer>
       <p>© 2025 Craig James</p>
     </footer>
-
-    <script>
-      const sections = document.querySelectorAll("section, header, footer");
-      const navLinks = document.querySelectorAll("nav a");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          const sectionHeight = section.clientHeight;
-          if (
-            pageYOffset >= sectionTop &&
-            pageYOffset < sectionTop + sectionHeight
-          ) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
-      });
-    </script>
   </body>
 </html>
